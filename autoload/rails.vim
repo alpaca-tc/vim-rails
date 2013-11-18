@@ -750,6 +750,8 @@ function! s:readable_calculate_file_type() dict abort
     let r = s:sub(f,'.*<test/(\w*)s/.*','test-\1')
   elseif f =~ '\<spec/lib/.*_spec\.rb$'
     let r = 'spec-lib'
+  elseif f =~ '\<spec/routing/.*_spec\.rb$'
+    let r = 'spec-routing'
   elseif f =~ '\<lib/.*\.rb$'
     let r = 'lib'
   elseif f =~ '\<spec/\w*s/.*_spec\.rb$'
@@ -4075,11 +4077,11 @@ function! s:BufAbbreviations()
       Rabbrev coo[ cookies
       Rabbrev fl[ flash
       Rabbrev rr( render
-      Rabbrev rf( render :file\ =>\ 
-      Rabbrev rj( render :json\ =>\ 
-      Rabbrev rp( render :partial\ =>\ 
-      Rabbrev rt( render :text\ =>\ 
-      Rabbrev rx( render :xml\ =>\ 
+      Rabbrev rf( render :file\ =>\
+      Rabbrev rj( render :json\ =>\
+      Rabbrev rp( render :partial\ =>\
+      Rabbrev rt( render :text\ =>\
+      Rabbrev rx( render :xml\ =>\
     endif
     if buffer.type_name('view','helper')
       Rabbrev dotiw distance_of_time_in_words
